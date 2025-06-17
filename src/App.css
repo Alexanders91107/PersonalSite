@@ -1,0 +1,13 @@
+html, body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+#root { /* Or your main app container ID/class */
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
