@@ -1,0 +1,31 @@
+.background-image {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #3344DD;
+    background-image: linear-gradient(90deg, #01b3fb 0%, #0647bf 100%);
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.head-image{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 11;
+}
+
+.circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+    z-index: 10;
+}

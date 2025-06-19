@@ -1,7 +1,8 @@
-import { useState } from 'react'
-import Button from './assets/components/Button.jsx'
-import Window from './assets/components/Window.jsx'
-import './App.css'
+import { useState } from 'react';
+import Taskbar from './assets/components/Taskbar.jsx';
+import Window from './assets/components/Window.jsx';
+import BackgroundImage from './assets/components/BackgroundImage.jsx';
+import './App.css';
 
 function App() {
   
@@ -47,7 +48,7 @@ function App() {
   return (
     <>
       <div className="App">
-        <Button onButtonClick={addWindow} buttonText="Open window" />
+        <BackgroundImage className="background"/>
 
         {/* Map over the windows array and render a Window component for each */}
         {windows.map(window => (
@@ -59,6 +60,11 @@ function App() {
             style={{ zIndex: 100 + (windows.length - windows.indexOf(window)) }}
           />
         ))}
+
+        {/* Taskbar with button to add new windows */}
+        <div className="taskbar-container">
+          <Taskbar buttonFunction={addWindow}/>
+        </div>
       </div>
     </>
   );

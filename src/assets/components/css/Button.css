@@ -1,19 +1,28 @@
 .button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 20%; /* Adjusted to make buttons more circular */
+  border: 4px solid transparent;
+  width: 50px; /* Set a fixed width */
+  height: 50px; /* Set a fixed height */
+  font-size: 0.8em; /* Adjust font size if there's text */
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  color: white;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  background-color: #b0b0b0;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color 0s;
+  display: flex; /* Add this */
+  align-items: center; /* Add this */
+  justify-content: center; /* Add this */
+  padding: 0; /* Add this to remove default button padding */
+  line-height: 1; /* Add this for tighter text centering */
+  user-select: none;
 }
-.button:hover {
-  border-color: #646cff;
-}
-.button:focus,
-.button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+
+/* Specific styles for close, minimize, maximize buttons */
+.button {background-color: #d8d8d8be;}
+.button:hover {border-color: #8d8d8dbe;} /* Change border color on hover */
+.button:active {
+    background-color: #8d8d8dbe;
+    border-color: #00000000;
+    box-shadow: 0px 0px 8px rgba(75, 75, 75, 0.6);
+} /* Change background color on active */
