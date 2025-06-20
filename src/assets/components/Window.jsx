@@ -279,6 +279,7 @@ function Window({ windowTitle = "My Application", onClose, onAccess }) {
 
     //---
     //handles a click on the fullscreen button
+
     const handleFullscreen = () =>{
         if (windowRef.current) {
             onAccess(); // Call onAccess to bring the window to the front
@@ -287,6 +288,7 @@ function Window({ windowTitle = "My Application", onClose, onAccess }) {
             if (isFullscreen){
                 setSize(savedSize);
                 setPosition(savedPosition);
+
             }
             else { //if not fullscreen, make fullscreen.
                 //save current position
