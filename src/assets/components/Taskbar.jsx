@@ -15,9 +15,10 @@ function Taskbar({buttonFunction}) {
   return (
     <div className="taskbar">
         <div className = "buttons-container">
-            <Button onButtonClick={buttonFunction} buttonText={"Click Me"} />
-            <Button onButtonClick={buttonFunction} buttonText={"Click Me"} />
-            <Button onButtonClick={buttonFunction} buttonText={"Click Me"} />
+            <Button onButtonClick={buttonFunction("about")} buttonText={"about"} />
+            <Button onButtonClick={buttonFunction("projects")} buttonText={"projects"} />
+            <Button onButtonClick={buttonFunction("posts")} buttonText={"posts"} />
+            <Button onButtonClick={buttonFunction("game")} buttonText={"game"} />
         </div>
 
         <div className = "time-date-container">

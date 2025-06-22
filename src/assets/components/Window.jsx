@@ -2,9 +2,7 @@ import React, { useState , useRef, useEffect } from 'react';
 import Content from './Content.jsx';
 import './css/Window.css';
 
-function Window({ windowTitle = "My Application", onClose, onAccess }) {
-
-
+function Window({ windowTitle = "My Application", onClose, onAccess, contentType = "default", style }) {
     //------------------------------------------------------------------------------------
     //Variables and states
     //------------------------------------------------------------------------------------
@@ -37,6 +35,15 @@ function Window({ windowTitle = "My Application", onClose, onAccess }) {
     //------------------------------------------------------------------------------------
     //------------------------------------------------------------------------------------
 
+    //------------------------------------------------------------------------------------
+    //Code for dragging the window
+    //------------------------------------------------------------------------------------
+
+    const handleAccess = (e) =>{
+        if(e.target.closest('button')) return; // Prevent bringing to front when clicking buttons
+        onAccess(); // Call handleAccess to bring the window to the front
+    }
+    //------------------------------------------------------------------------------------
 
 
     //------------------------------------------------------------------------------------
@@ -47,9 +54,9 @@ function Window({ windowTitle = "My Application", onClose, onAccess }) {
     // handles when the user clicks the window header
     const handleHeaderClick = (e) => {
         if(e.target.closest('button')) return; // Prevent dragging when clicking buttons
+        handleAccess(e); // Call handleAccess to bring the window to the front
 
         if(windowRef.current) {
-            onAccess(); // Call onAccess to bring the window to the front
             setIsDragging(true); //sets dragging variable to true
 
             const rect = windowRef.current.getBoundingClientRect(); //gets the position of the window
@@ -72,7 +79,6 @@ function Window({ windowTitle = "My Application", onClose, onAccess }) {
         //this function is called when the mouse moves while dragging
         const handleMouseMove = (e) => {
             if (!isDragging || !windowRef.current) return;
-
             //calculates the position based on the new mouse position and the initial offset
 
             //for calcualting bounds
@@ -124,7 +130,7 @@ function Window({ windowTitle = "My Application", onClose, onAccess }) {
         if(e.target.closest('button')) return;
 
         if(windowRef.current) {
-            onAccess(); // Call onAccess to bring the window to the front
+            handleAccess(e); // Call handleAccess to bring the window to the front
             setIsDraggingResize(true);
             setActiveResizeDirection(direction); // Store the active direction
 
@@ -280,9 +286,9 @@ function Window({ windowTitle = "My Application", onClose, onAccess }) {
     //---
     //handles a click on the fullscreen button
 
-    const handleFullscreen = () =>{
+    const handleFullscreen = (e) =>{
         if (windowRef.current) {
-            onAccess(); // Call onAccess to bring the window to the front
+            handleAccess(e); // Call handleAccess to bring the window to the front
 
             //if already fullscreen, restore saved size
             if (isFullscreen){
@@ -393,7 +399,7 @@ function Window({ windowTitle = "My Application", onClose, onAccess }) {
     //------------------------------------------------------------------------------------
 
     //---
-    const windowStyle = {};
+    const windowStyle = {...style,};
 
     //position
     windowStyle.top = `${position.top}px`;
@@ -438,7 +444,7 @@ function Window({ windowTitle = "My Application", onClose, onAccess }) {
                 onMouseDown = {handleHeaderClick}
                 style = {{cursor : isDragging ? 'grabbing' : 'grab'}}
             >
-                <div className="window-title">{windowTitle}</div>
+                <div className="window-title">{contentType + " " + windowTitle}</div>
                 <div className="window-controls">
 
                     {/*Maximize button*/}
@@ -462,9 +468,9 @@ function Window({ windowTitle = "My Application", onClose, onAccess }) {
             {/*Window Content*/}
             <div 
                 className="window-content"
-                onMouseDown = {onAccess}
+                onMouseDown = {handleAccess}
             >    
-            <Content />
+                <Content contentType = {contentType}/>
             </div>
             
             {/*Resize Handlers*/}

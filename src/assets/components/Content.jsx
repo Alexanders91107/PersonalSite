@@ -1,11 +1,24 @@
 import React from 'react'; 
+import About from './Pages/About';
+import Projects from './Pages/Projects';
+import Posts from './Pages/Posts';
+import Game from './Pages/Game';
 
-function Content() {
-  return (
-    <div className="content">
-        lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </div>
-  );
+// 1. Destructure `contentType` from the props object
+function Content({ contentType = 'default' }) {
+  const contentMap = {
+    default: <div className="content"> This is the default content. </div>,
+    about: <About />,
+    projects: <Projects />,
+    posts: <Posts />,
+    game: <Game />,
+  };
+
+  // Look up the content, or fall back to default if contentType is invalid
+  const content = contentMap[contentType] || contentMap.default;
+
+  // 2. Return the JSX element directly
+  return content;
 }
 
 export default Content;
