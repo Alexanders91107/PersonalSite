@@ -21,7 +21,7 @@ function App() {
   //when a button is clicked to add a new window
   const addWindow = (content) => () =>{
     // Give each window a unique ID
-    const newWindow = { id: Date.now(), contentType: content };
+    const newWindow = { id: content, contentType: content };
 
     //add window to the list
     setWindows(prevWindows => [...prevWindows, newWindow]);
@@ -68,7 +68,10 @@ function App() {
 
         {/* Taskbar with button to add new windows */}
         <div className="taskbar-container">
-          <Taskbar buttonFunction={addWindow}/>
+          <Taskbar 
+            openFunction={addWindow}
+            closeFunction={closeWindow}
+          />
         </div>
       </div>
     </>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Button from './Button.jsx';
 import './css/Taskbar.css';
 
-function Taskbar({buttonFunction}) {
+function Taskbar({openFunction, closeFunction}) {
     const [currentDate, setCurrentDate] = useState(new Date());
     
     //updates with a new date every second
@@ -15,10 +15,10 @@ function Taskbar({buttonFunction}) {
   return (
     <div className="taskbar">
         <div className = "buttons-container">
-            <Button onButtonClick={buttonFunction("about")} buttonText={"about"} />
-            <Button onButtonClick={buttonFunction("projects")} buttonText={"projects"} />
-            <Button onButtonClick={buttonFunction("posts")} buttonText={"posts"} />
-            <Button onButtonClick={buttonFunction("game")} buttonText={"game"} />
+            <Button openFunction={openFunction("about")} closeFunction = {closeFunction("about")} buttonText={"about"} />
+            <Button openFunction={openFunction("projects")} closeFunction={closeFunction("projects")} buttonText={"projects"} />
+            <Button openFunction={openFunction("posts")} closeFunction={closeFunction("posts")} buttonText={"posts"} />
+            <Button openFunction={openFunction("game")} closeFunction={closeFunction("game")} buttonText={"game"} />
         </div>
 
         <div className = "time-date-container">

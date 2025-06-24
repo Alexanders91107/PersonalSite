@@ -444,7 +444,7 @@ function Window({ windowTitle = "My Application", onClose, onAccess, contentType
                 onMouseDown = {handleHeaderClick}
                 style = {{cursor : isDragging ? 'grabbing' : 'grab'}}
             >
-                <div className="window-title">{contentType + " " + windowTitle}</div>
+                <div className="window-title">{windowTitle}</div>
                 <div className="window-controls">
 
                     {/*Maximize button*/}

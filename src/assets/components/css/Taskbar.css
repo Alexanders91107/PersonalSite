@@ -10,6 +10,7 @@
     justify-content: space-between;
     gap: 30px;
     padding: 0 10px; /* optional: add horizontal padding */
+    z-index: 200;
 }
 
 .buttons-container {
