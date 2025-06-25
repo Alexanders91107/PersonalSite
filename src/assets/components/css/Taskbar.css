@@ -10,7 +10,7 @@
     justify-content: space-between;
     gap: 30px;
     padding: 0 10px; /* optional: add horizontal padding */
-    z-index: 200;
+    z-index: 1000;
 }
 
 .buttons-container {
@@ -30,4 +30,15 @@
     top: 50%;
     transform: translateY(-50%);
     pointer-events: none; /* makes it "invisible" to mouse events */
+}
+
+.taskbar-grabber {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Adjust as needed */
+    height: 30px;
+    background-color: rgba(0,0,0,0); /* Make it invisible */
+    z-index: 1001;
+    pointer-events: none; /* Makes it "invisible" to mouse events */
 }

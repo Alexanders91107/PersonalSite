@@ -2,7 +2,7 @@ import React, { useState , useRef, useEffect } from 'react';
 import Content from './Content.jsx';
 import './css/Window.css';
 
-function Window({ windowTitle = "My Application", onClose, onAccess, contentType = "default", style }) {
+function Window({ windowTitle = "My Application", toggleTaskbar, onClose, onAccess, contentType = "default", style }) {
     //------------------------------------------------------------------------------------
     //Variables and states
     //------------------------------------------------------------------------------------
@@ -36,12 +36,18 @@ function Window({ windowTitle = "My Application", onClose, onAccess, contentType
     //------------------------------------------------------------------------------------
 
     //------------------------------------------------------------------------------------
-    //Code for dragging the window
+    //Code for handling app.js functions
     //------------------------------------------------------------------------------------
 
-    const handleAccess = (e) =>{
-        if(e.target.closest('button')) return; // Prevent bringing to front when clicking buttons
+    const handleAccess = (e, isButton = false) =>{
+        if(!isButton && e.target.closest('button')) return; // Prevent bringing to front when clicking buttons
+        if(isFullscreen) toggleTaskbar(false);
         onAccess(); // Call handleAccess to bring the window to the front
+    }
+
+    const handleClose = () => {
+        if(isFullscreen) toggleTaskbar(true); // Show taskbar when closing fullscreen
+        onClose();
     }
     //------------------------------------------------------------------------------------
 
@@ -288,13 +294,13 @@ function Window({ windowTitle = "My Application", onClose, onAccess, contentType
 
     const handleFullscreen = (e) =>{
         if (windowRef.current) {
-            handleAccess(e); // Call handleAccess to bring the window to the front
+            handleAccess(e, true); // Call handleAccess to bring the window to the front
 
             //if already fullscreen, restore saved size
             if (isFullscreen){
                 setSize(savedSize);
                 setPosition(savedPosition);
-
+                toggleTaskbar(true); // Show taskbar when exiting fullscreen
             }
             else { //if not fullscreen, make fullscreen.
                 //save current position
@@ -304,6 +310,8 @@ function Window({ windowTitle = "My Application", onClose, onAccess, contentType
                 //set new, fullscreen, position
                 setSize({ width: window.innerWidth - viewportGutter*2, height: window.innerHeight - viewportGutter*2});
                 setPosition({ top: viewportGutter, left: viewportGutter });
+
+                toggleTaskbar(false); // Hide taskbar when entering fullscreen
             }
 
             setIsFullscreen(!isFullscreen); // Toggle fullscreen state
@@ -458,7 +466,7 @@ function Window({ windowTitle = "My Application", onClose, onAccess, contentType
                     {/*Close Button*/}
                     <div className="close-button">
                         <button className = "window-button close"
-                            onMouseDown = {onClose}
+                            onMouseDown = {handleClose}
                         >X</button>
                     </div>
 

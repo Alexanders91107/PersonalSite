@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Button from './Button.jsx';
 import './css/Taskbar.css';
 
-function Taskbar({openFunction, closeFunction}) {
+function Taskbar({clickFunction, hoverFunction, style}) {
     const [currentDate, setCurrentDate] = useState(new Date());
     
     //updates with a new date every second
@@ -12,13 +12,18 @@ function Taskbar({openFunction, closeFunction}) {
         return () => clearInterval(timerId); //removes interval when component is removed
     }, []); // The empty array ensures this effect runs only once on initial render
 
+
   return (
-    <div className="taskbar">
+    <div 
+        className="taskbar"
+        style = {style}
+        onMouseLeave = {() => hoverFunction(false)} // Hide taskbar when mouse leaves
+    >
         <div className = "buttons-container">
-            <Button openFunction={openFunction("about")} closeFunction = {closeFunction("about")} buttonText={"about"} />
-            <Button openFunction={openFunction("projects")} closeFunction={closeFunction("projects")} buttonText={"projects"} />
-            <Button openFunction={openFunction("posts")} closeFunction={closeFunction("posts")} buttonText={"posts"} />
-            <Button openFunction={openFunction("game")} closeFunction={closeFunction("game")} buttonText={"game"} />
+            <Button clickFunction={clickFunction} contentType={"about"} />
+            <Button clickFunction={clickFunction} contentType={"projects"} />
+            <Button clickFunction={clickFunction} contentType={"posts"} />
+            <Button clickFunction={clickFunction} contentType={"game"} />
         </div>
 
         <div className = "time-date-container">

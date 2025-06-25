@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Taskbar from './assets/components/Taskbar.jsx';
+import TaskbarGrabber from './assets/components/TaskbarGrabber.jsx';
 import Window from './assets/components/Window.jsx';
 import BackgroundImage from './assets/components/BackgroundImage.jsx';
 import './App.css';
@@ -17,11 +18,63 @@ function App() {
   // Each window will have a unique ID to manage its state
   const [windows, setWindows] = useState([]);
   const [windowsZ, setWindowsZ] = useState([]);
+  const [taskbarVisible, setTaskbarVisible] = useState(true);
+  const [taskbarGrabberVisible, setTaskbarGrabberVisible] = useState(false);
+  const [shouldRenderTaskbar, setShouldRenderTaskbar] = useState(true);
+  const [taskbarOpacity, setTaskbarOpacity] = useState(1);
+
+  //------------------------------------------------------------------------------------
+  //taskbar related functions
+  //------------------------------------------------------------------------------------
+
+  //useEffect to handle the taskbar opacity animation
+  useEffect(() => {
+    if(taskbarGrabberVisible || taskbarVisible){
+      // If the taskbar grabber is visible or the taskbar is visible, show the taskbar
+      setShouldRenderTaskbar(true);
+      setTimeout(() => setTaskbarOpacity(1), 50);
+    }
+    else{
+      // If neither is visible, hide the taskbar
+      setTaskbarOpacity(0);
+      const timeout = setTimeout(() => setShouldRenderTaskbar(false), 400);
+      return () => clearTimeout(timeout);
+    }
+  }, [taskbarGrabberVisible, taskbarVisible]);
+
+  //function to handle taskbar grabber hover
+  const handleTaskbarGrabber = (isHovering) => {setTaskbarGrabberVisible(isHovering);}
+
+  //function to toggle the taskbar visibility
+  const toggleTaskbar = (visible) => {setTaskbarVisible(visible);}
+
+  //function to handle taskbar button clicks
+  const handleButtonClick = (content) => {
+    const existingWindow = windows.find(window => window.id === content);
+
+    if(!existingWindow) addWindow(content)();
+    else{
+      // If the window is already open, toggle its isOpen state
+      if(!taskbarVisible) toggleTaskbar(true);
+      setWindows(prevWindows => 
+        prevWindows.map(window => 
+          window.id === content ? { ...window, isOpen: !existingWindow.isOpen } : window
+        )
+      );
+    }
+    accessHandler(content)();
+  }
+  //------------------------------------------------------------------------------------
+
+
+  //------------------------------------------------------------------------------------
+  // Functions for adding and removing windows
+  //------------------------------------------------------------------------------------
 
   //when a button is clicked to add a new window
   const addWindow = (content) => () =>{
     // Give each window a unique ID
-    const newWindow = { id: content, contentType: content };
+    const newWindow = { id: content, contentType: content, isOpen: true };
 
     //add window to the list
     setWindows(prevWindows => [...prevWindows, newWindow]);
@@ -36,10 +89,14 @@ function App() {
     setWindows(newWindows);
     setWindowsZ(newWindowsZ);
   };
-  
+  //------------------------------------------------------------------------------------
+
+
+  //------------------------------------------------------------------------------------
   //this is for z-index management
   //windows are ordered by their index in the array
-  const accessHander = (key) => () => {
+  //------------------------------------------------------------------------------------
+  const accessHandler = (key) => () => {
     let newWindows = windowsZ.filter(id => id != key);
     newWindows.push(key);
     setWindowsZ(newWindows);
@@ -59,18 +116,27 @@ function App() {
           <Window 
             key={window.id} 
             windowTitle ={window.id}
+            toggleTaskbar={toggleTaskbar}
             onClose={closeWindow(window.id)}
-            onAccess = {accessHander(window.id)}
+            onAccess = {accessHandler(window.id)}
             contentType = {window.contentType || 'default'}
-            style={{ zIndex: 100 + (windowsZ.indexOf(window.id)) }}
+            style={{ zIndex: windowsZ.indexOf(window.id), display: (window.isOpen) ? 'block' : 'none' }}
           />
         ))}
 
         {/* Taskbar with button to add new windows */}
         <div className="taskbar-container">
           <Taskbar 
-            openFunction={addWindow}
-            closeFunction={closeWindow}
+            clickFunction={handleButtonClick}
+            hoverFunction = {handleTaskbarGrabber}
+            style={{display: (shouldRenderTaskbar) ? 'flex' : 'none', opacity: taskbarOpacity, transition: 'opacity 0.4s ease'}}
+          />
+        </div>
+
+        <div>
+          <TaskbarGrabber 
+            hoverFunction={handleTaskbarGrabber}
+            taskbarVisible={taskbarVisible}
           />
         </div>
       </div>

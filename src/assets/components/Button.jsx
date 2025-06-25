@@ -1,18 +1,10 @@
 import React from 'react'; 
 import './css/Button.css';
 
-function Button({ openFunction, closeFunction, buttonText = "Click Me" }) {
-  const [toggleWindow, setToggle] = React.useState(false);
-
-  const handleClick = () => {
-    if(!toggleWindow) openFunction();
-    else closeFunction();
-    setToggle(!toggleWindow);
-  }
-
+function Button({ clickFunction, contentType = "default" }) {
   return (
-    <button className="button" onClick={handleClick}>
-      {buttonText}
+    <button className="button" onClick={() => clickFunction(contentType)}>
+      {contentType}
     </button>
   );
 }
