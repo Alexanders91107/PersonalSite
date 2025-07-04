@@ -1,5 +1,5 @@
 import React from 'react'; 
-import About from './Pages/About';
+import About from './Pages/About/About';
 import Projects from './Pages/Projects';
 import Posts from './Pages/Posts';
 import Game from './Pages/Game';
