@@ -31,15 +31,17 @@
     -webkit-user-select: none; /* For Safari */
     -moz-user-select: none; /* For Firefox */
     -ms-user-select: none; /* For Internet Explorer/Edge */
+    z-index: 100;
 }
 
 .window-content {
     width: 100%;
-    height: 100%;
+    height: calc(100% - 40px);
     margin: 0px;
-    overflow-y: auto; /* Allows scrolling if content overflows */
+    overflow-y: hidden; /* Allows scrolling if content overflows */
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* Internet Explorer and Edge */
+    z-index: 0;
 }
 
 .window-content::-webkit-scrollbar {

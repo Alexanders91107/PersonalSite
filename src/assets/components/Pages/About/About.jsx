@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import GeneralContent from './GeneralContent';
 import SkillsContent from './SkillsContent';
 import OtherContent from './OtherContent';
-import './About.css'; // Assuming you have a CSS file for styling
+import './css/About.css'; // Assuming you have a CSS file for styling
 
 function About(){
     const [pageTitle, setPageTitle] = useState("General");

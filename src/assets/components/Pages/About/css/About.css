@@ -1,0 +1,77 @@
+.main-container{
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+
+.main-container::-webkit-scrollbar {
+    display: none;
+}
+
+.background{
+    position: absolute;
+    top: 40px;
+    height: 1000%;
+    overflow-y: hidden;
+    width: 100%;
+    background-image: linear-gradient(110deg, #727272 0%, #0e0e0e 100%);
+    z-index: -1;
+}
+
+.content{
+    padding-top: 10px;
+    top: 0px;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100%;
+    z-index: 1;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    white-space: normal; /* Ensure text wraps */
+    overflow-wrap: break-word; /* Break long words if needed */
+    word-break: break-word; /* Extra support for word breaking */
+}
+
+.header{
+    position: sticky;
+    top: 5px;
+    width: 95%;
+    border-radius: 10px;
+    height: 50px;
+    background-color: #00000090;
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    justify-content: center;
+    z-index: 2;
+    transition: box-shadow 0.3s ease; /* Add this line */
+}
+
+.header:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
+}
+
+.page-button{
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    font-size: 0.8rem;
+    color: #ffffff;
+    background-color: #ffffff10; /* Transparent background */
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 5px;
+    margin: 0px 1%;
+    padding: 8px 5%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.page-button:hover {
+    background-color: #ffffff20; /* Slightly visible on hover */
+    box-shadow: 0px 0px 7px rgba(255, 255, 255, 0.2);
+    color: #ffffff; /* Change text color on hover */
+}

@@ -27,7 +27,7 @@ function Window({ windowTitle = "My Application", toggleTaskbar, onClose, onAcce
     const [savedPosition, setSavedPosition] = useState({ top: window.innerHeight/4, left: window.innerWidth/4 });
 
     // Minimum size for the window
-    const minWidth = 200;
+    const minWidth = 450;
     const minHeight = 100;
 
     // To prevent sticking to the very edge
