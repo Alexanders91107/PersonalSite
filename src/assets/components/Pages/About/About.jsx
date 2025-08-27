@@ -4,13 +4,13 @@ import SkillsContent from './SkillsContent';
 import OtherContent from './OtherContent';
 import './css/About.css'; // Assuming you have a CSS file for styling
 
-function About(){
+function About({ setOverlayActive}){
     const [pageTitle, setPageTitle] = useState("General");
 
     const contentMap = {
         General: <GeneralContent />,
         Skills: <SkillsContent />,
-        Other: <OtherContent />,
+        Other: <OtherContent setOverlayActive={setOverlayActive}/>,
     };
 
     return (

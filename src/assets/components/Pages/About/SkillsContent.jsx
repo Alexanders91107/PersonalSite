@@ -1,7 +1,7 @@
 import React from 'react';
 import './css/SkillsContent.css';
-import nodejsImage from './images/nodejs.png'; //
-import reactjsImage from './images/reactjs.png'; //
+import nodejsImage from './images/nodejs.png';
+import reactjsImage from './images/reactjs.png';
 import htmlImage from './images/html.png'; 
 import cssImage from './images/css.png';
 import sqlImage from './images/sql.png';

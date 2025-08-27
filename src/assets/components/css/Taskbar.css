@@ -9,8 +9,9 @@
     align-items: center;
     justify-content: space-between;
     gap: 30px;
-    padding: 0 10px; /* optional: add horizontal padding */
+    padding: 0 10px;
     z-index: 1000;
+    container-type: inline-size;
 }
 
 .buttons-container {
@@ -41,4 +42,10 @@
     background-color: rgba(0,0,0,0); /* Make it invisible */
     z-index: 1001;
     pointer-events: none; /* Makes it "invisible" to mouse events */
+}
+
+@container (max-width: 570px) {
+    .time-date-container {
+        display: none; /* Hide on small screens */
+    }
 }

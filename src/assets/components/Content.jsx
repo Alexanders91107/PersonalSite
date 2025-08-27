@@ -1,14 +1,14 @@
 import React from 'react'; 
 import About from './Pages/About/About';
-import Projects from './Pages/Projects';
-import Posts from './Pages/Posts';
-import Game from './Pages/Game';
+import Projects from './Pages/Projects/Projects';
+import Posts from './Pages/Posts/Posts';
+import Game from './Pages/Game/Game';
 
 // 1. Destructure `contentType` from the props object
-function Content({ contentType = 'default' }) {
+function Content({ contentType = 'default', setOverlayActive }) {
   const contentMap = {
     default: <div className="content"> This is the default content. </div>,
-    about: <About />,
+    about: <About setOverlayActive = {setOverlayActive}/>,
     projects: <Projects />,
     posts: <Posts />,
     game: <Game />,

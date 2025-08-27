@@ -26,8 +26,10 @@ function Window({ windowTitle = "My Application", toggleTaskbar, onClose, onAcce
     const [savedSize, setSavedSize] = useState({ width: window.innerWidth/2, height: window.innerHeight/2 });
     const [savedPosition, setSavedPosition] = useState({ top: window.innerHeight/4, left: window.innerWidth/4 });
 
+    const [isOverlayActive, setIsOverlayActive] = useState(false);
+
     // Minimum size for the window
-    const minWidth = 450;
+    const minWidth = 350;
     const minHeight = 100;
 
     // To prevent sticking to the very edge
@@ -478,7 +480,7 @@ function Window({ windowTitle = "My Application", toggleTaskbar, onClose, onAcce
                 className="window-content"
                 onMouseDown = {handleAccess}
             >    
-                <Content contentType = {contentType}/>
+                <Content contentType = {contentType} setOverlayActive={setIsOverlayActive}/>
             </div>
             
             {/*Resize Handlers*/}
@@ -489,6 +491,8 @@ function Window({ windowTitle = "My Application", toggleTaskbar, onClose, onAcce
                     onMouseDown={createResizeHandler(edge)}
                 ></div>
             ))}
+
+            {isOverlayActive && <div className="window-overlay"></div>}
         </div>
     );
 }
