@@ -20,7 +20,7 @@ function Page3(){
                             <img 
                                 src = {siteImage}
                                 alt = "Spotify Project"
-                                style = {{width: '100%', height: '100%', objectFit: 'cover'}}
+                                style = {{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '10px'}}
                             />
                         </div>
                     </div>

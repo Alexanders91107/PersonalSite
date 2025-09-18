@@ -21,7 +21,7 @@ function Page1(){
                             <img 
                                 src = {aspiImage}
                                 alt = "ASPI Project"
-                                style = {{width: '100%', height: '100%', objectFit: 'cover'}}
+                                style = {{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '10px'}}
                             />
                         </div>
                     </div>

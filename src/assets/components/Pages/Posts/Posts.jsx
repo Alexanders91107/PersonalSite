@@ -1,7 +1,7 @@
 import React from 'react';
 import './css/Posts.css';
 import GeneralPost from './Posts-content/generalPost.jsx';
-import Post1 from './Posts-content/post1.jsx';
+import SpotifyViewerPost from './Posts-content/spotifyViewerPost.jsx';
 
 function Posts(){
     const [currentPostIndex, setCurrentPostIndex] = React.useState(0);
@@ -14,28 +14,8 @@ function Posts(){
         },
         {
             id: 1,
-            title: "Post 1",
-            content: <Post1 />
-        },
-                {
-            id: 0,
-            title: "Information",
-            content: <GeneralPost />
-        },
-        {
-            id: 1,
-            title: "Post 1",
-            content: <Post1 />
-        },
-                {
-            id: 0,
-            title: "Information",
-            content: <GeneralPost />
-        },
-        {
-            id: 1,
-            title: "Post 1",
-            content: <Post1 />
+            title: "Spotify Viewer",
+            content: <SpotifyViewerPost />
         },
     ];
 

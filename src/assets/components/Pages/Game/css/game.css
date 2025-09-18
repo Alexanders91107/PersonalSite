@@ -1,0 +1,75 @@
+.game-main-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    container-type: size;
+    overflow: hidden;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+
+.start-button {
+    height: 60px;
+    width: 200px;
+    padding: 15px 30px;
+    font-size: 2rem;
+    color: #ffffff;
+    background-color: #000000;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.start-button:hover {
+  transform: scale(1.05);
+}
+
+.start-button:active {
+  background-color: #333333;
+}
+
+.game-container{
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    color: white;
+}
+
+.paddle {
+    left: 10px;
+    height: 86px;
+    width: 10px;
+    background-color: #00000000;
+    font-size: 5rem;
+    text-align: center;
+    justify-self: center;
+    justify-content: center;
+    display: flex;
+    line-height: 80px;
+    user-select: none;
+    position: absolute;
+    transition: top 0.05s ease-out;
+}
+
+.ball {
+    height: 20px;
+    width: 20px;
+    background-color: #ffffff00;
+    position: absolute;
+    text-align: center;
+    justify-self: center;
+    justify-content: center;
+    display: flex;
+    line-height: 20px;
+    font-size: 2rem;
+    user-select: none;
+    transition: left 0.05s ease-out, top 0.05s ease-out;
+}

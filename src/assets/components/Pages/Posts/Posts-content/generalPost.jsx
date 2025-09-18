@@ -1,6 +1,6 @@
 import React from 'react';
 import './css/generalPost.css';
-
+import meImage from './images/me2.jpg';
 function GeneralPost(){
     return (
         <div className="general-post-container">
@@ -14,6 +14,10 @@ function GeneralPost(){
                 This page will not just be blobs of text; I’ll put pictures, videos, and other things. These pages are just their React files, so I can do anything with them. 
                 <br/><br/>
                 <div className = "general-post-image-container">
+                    <img className = "general-post-image"
+                        src={meImage}
+                        alt="A picture of me"
+                    />
                 </div>
                 Anyways, that's it. Bye!
                 <br/><br/>
