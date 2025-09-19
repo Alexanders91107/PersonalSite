@@ -73,3 +73,13 @@
     user-select: none;
     transition: left 0.05s ease-out, top 0.05s ease-out;
 }
+
+.score{
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: clamp(4rem, 15cqh, 10rem);
+    color: #333333;
+}
