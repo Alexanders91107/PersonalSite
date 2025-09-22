@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Button from './Button.jsx';
 import './css/Taskbar.css';
+import aboutSVG from './svg/HeadshotSVG.svg';
+import projectsSVG from './svg/WindowSVG.svg';
+import postsSVG from './svg/HeadshotSVG.svg';
+import gameSVG from './svg/HeadshotSVG.svg';
 
 function Taskbar({clickFunction, hoverFunction, style}) {
     const [currentDate, setCurrentDate] = useState(new Date());
@@ -20,10 +24,10 @@ function Taskbar({clickFunction, hoverFunction, style}) {
         onMouseLeave = {() => hoverFunction(false)} // Hide taskbar when mouse leaves
     >
         <div className = "buttons-container">
-            <Button clickFunction={clickFunction} contentType={"about"} />
-            <Button clickFunction={clickFunction} contentType={"projects"} />
-            <Button clickFunction={clickFunction} contentType={"posts"} />
-            <Button clickFunction={clickFunction} contentType={"game"} />
+            <Button clickFunction={clickFunction} contentType={"about"} logo={aboutSVG} />
+            <Button clickFunction={clickFunction} contentType={"projects"} logo={projectsSVG} />
+            <Button clickFunction={clickFunction} contentType={"posts"} logo={postsSVG} />
+            <Button clickFunction={clickFunction} contentType={"game"} logo={gameSVG} />
         </div>
 
         <div className = "time-date-container">

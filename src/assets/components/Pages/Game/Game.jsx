@@ -33,7 +33,7 @@ function Game(){
         let dx = 2;
         let dy = -2;
         setBallPosition({x: 500, y: 500});
-        pointEarned.current = false;
+        pointEarned.current = true;
 
         const handleKeyDown = (event) => {
             switch(event.key) {
@@ -83,7 +83,7 @@ function Game(){
                     setPaddlePosition(yMin); // Reset paddle position
                     setGameStarted(false); // Stop the game
                     setGameScore(0); // Reset score
-                    pointEarned.current = false;
+                    pointEarned.current = true;
                     clearInterval(gameLoop); // Stop the game loop
                 }
                 // Check for collision with paddle
