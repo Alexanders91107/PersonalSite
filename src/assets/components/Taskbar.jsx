@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Button from './Button.jsx';
 import './css/Taskbar.css';
-import aboutSVG from './svg/HeadshotSVG.svg';
+import aboutSVG from './svg/HeadshotOutlineSVG.svg';
 import projectsSVG from './svg/WindowSVG.svg';
-import postsSVG from './svg/HeadshotSVG.svg';
-import gameSVG from './svg/HeadshotSVG.svg';
+import postsSVG from './svg/PenAndPaperSVG.svg';
+import gameSVG from './svg/ControllerSVG.svg';
 
 function Taskbar({clickFunction, hoverFunction, style}) {
     const [currentDate, setCurrentDate] = useState(new Date());

@@ -37,4 +37,5 @@
   height: 90%; /* Adjust size as needed */
   object-fit: contain; /* Ensure the image scales properly */
   opacity: 0.5;
+  pointer-events: none;
 }
