@@ -30,3 +30,22 @@ html, body {
     border-radius: 10px;
     z-index: 50;
 }
+
+.loading-screen {
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    position: fixed;
+    inset: 0;
+    background-color: #000000dd; /* Semi-transparent black */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 100; /* Ensure it's above other content */
+    transition: opacity 0.5s ease-in-out; /* Smooth fade-out transition */
+}
+
+.loading-text {
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    color: white;
+    font-size: 5em;
+}

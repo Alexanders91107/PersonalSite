@@ -22,6 +22,7 @@ function App() {
   const [taskbarGrabberVisible, setTaskbarGrabberVisible] = useState(false);
   const [shouldRenderTaskbar, setShouldRenderTaskbar] = useState(true);
   const [taskbarOpacity, setTaskbarOpacity] = useState(1);
+  const [isLoading, setIsLoading] = useState(true);
 
   //------------------------------------------------------------------------------------
   //taskbar related functions
@@ -104,11 +105,43 @@ function App() {
 
   //------------------------------------------------------------------------------------
   //------------------------------------------------------------------------------------
+  useEffect(() => {
+    const hideLoader = () => setTimeout(() => setIsLoading(false), 300); // small delay for smoothness
+    if (document.readyState === 'complete') hideLoader();
+    else window.addEventListener('load', hideLoader);
+    return () => window.removeEventListener('load', hideLoader);
+  }, []);
+
+  const randomTexts = [
+    "Loading",
+    "Welcome",
+    "Running SpillyOS",
+    "Booting up",
+    "Locking In",
+    "hello",
+    "Starting",
+    "Preparing",
+    "Getting things ready",
+    "Just a moment",
+    "Good things take time",
+    "Reticulating splines",
+    "Summoning pixels",
+    "Aligning bits",
+  ];
+
+  const [randomText] = useState(() => {
+    const idx = Math.floor(Math.random() * randomTexts.length);
+    return randomTexts[idx];
+  });
 
   //Render the app
   return (
     <>
       <div className="App">
+        <div className = "loading-screen"
+          style={{ opacity: isLoading ? 1 : 0 }}>
+          <div className = "loading-text">{randomText}...</div>
+        </div>
         <BackgroundImage className="background"/>
 
         {/* Map over the windows array and render a Window component for each */}
