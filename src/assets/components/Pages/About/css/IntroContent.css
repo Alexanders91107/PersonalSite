@@ -1,4 +1,4 @@
-.general-main-container {
+.intro-main-container {
     width: 100%;
     max-width: 1000px;
     height: 90%;
@@ -6,16 +6,16 @@
 }
 
 .subcontainer{
-    max-width: 95%;
+    max-width: 90%;
     height: auto;
-    min-height: 250px;
+    min-height: 10px;
     margin-bottom: 20px;
     background-color: #00000090;
     border-radius: 10px;
     justify-self: center;
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 10px;
     padding: 20px;
     overflow-y: auto;
     box-sizing: border-box;
@@ -24,13 +24,50 @@
     container-type: inline-size; /* 1. Define this as a query container */
 }
 
-.general-subcontainer{
+.intro-subcontainer{
     flex-direction: column;
 }
 
 .subcontainer:hover {
     background-color: #00000095;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
+}
+
+.skills-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: stretch;
+    justify-content: stretch;
+    width: 95%;
+}
+
+.skills-item{
+    flex: 1 1 80px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    background-color: #ffffff10;
+    padding: 5px 4px;
+    border-radius: 5px;
+    color: white;
+    font-size: clamp(0.8rem, 3cqw, 2rem);
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skills-item:hover{
+    background-color: #ffffff20;
+    box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5);
+    transform: scale(1.03);
+}
+
+hr{
+    width: 80%;
+    border: 0;
+    border-top: 1px solid #ffffff40;
+    margin: 20px auto;
 }
 
 .profile-image {
@@ -96,9 +133,14 @@
     }
 }
 
+a{
+    text-decoration: none; /* Ensure no default underline appears */
+    color: inherit;
+}
+
 .subcontainer-title {
     font-family: 'Comic Sans MS', 'Comic Sans', cursive;
-    font-size: clamp(1.6rem, 6cqw, 5rem);
+    font-size: clamp(0.8rem, 5cqw, 4rem);
     text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5);
     color: #ffffff;
     text-align: center;
@@ -109,7 +151,7 @@
 
 .subcontainer-title:hover {
     text-shadow: 0px 0px 12px rgba(255, 255, 255, 0.7);
-    font-size: clamp(1.7rem, 7cqw, 6rem);
+    font-size: clamp(0.8rem, 5.5cqw, 4.5rem);
 }
 
 .subcontainer-text {

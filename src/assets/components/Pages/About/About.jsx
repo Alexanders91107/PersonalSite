@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import GeneralContent from './GeneralContent';
 import SkillsContent from './SkillsContent';
 import OtherContent from './OtherContent';
+import IntroContent from './IntroContent';
 import './css/About.css'; // Assuming you have a CSS file for styling
 
 function About({ setOverlayActive}){
     const [pageTitle, setPageTitle] = useState("General");
 
     const contentMap = {
+        Intro: <IntroContent />,
         General: <GeneralContent />,
         Skills: <SkillsContent />,
         Other: <OtherContent setOverlayActive={setOverlayActive}/>,
@@ -16,6 +18,7 @@ function About({ setOverlayActive}){
     return (
         <div className="main-container">
             <div className = "header">
+                <button className = "page-button" onClick={() => setPageTitle("Intro")}>Intro</button>
                 <button className = "page-button" onClick={() => setPageTitle("General")}>General</button>
                 <button className = "page-button" onClick={() => setPageTitle("Skills")}>Skills</button>
                 <button className = "page-button" onClick={() => setPageTitle("Other")}>Other</button>

@@ -29,13 +29,13 @@ function SkillsContent(){
                 const isFromLeft = skill.align === 'left';
                 const content = isFromLeft ? (
                     <>
-                        <div className="subcontainer-title-skills subcontainer-title">{skill.name}</div>
+                        <div className="subcontainer-title-skills">{skill.name}</div>
                         <div className="image-container"><img src={skill.image} alt={skill.name} className="skill-image" /></div>
                     </>
                 ) : (
                     <>
                         <div className="image-container"><img src={skill.image} alt={skill.name} className="skill-image" /></div>
-                        <div className="subcontainer-title-skills subcontainer-title">{skill.name}</div>
+                        <div className="subcontainer-title-skills">{skill.name}</div>
                     </>
                 );
 

@@ -65,8 +65,21 @@
 }
 
 .subcontainer-title-skills{
-    margin-top: -20px;
     transition: text-shadow 0.5s ease transform 0.5s ease;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: -10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    transition: text-shadow 0.3s ease, font-size 0.3s ease, scale 0.3s ease;
+    font-size: clamp(1rem, 5cqw, 10rem);
+}
+
+.subcontainer-title-skills:hover {
+    text-shadow: 0px 0px 12px rgba(255, 255, 255, 0.7);
+    font-size: clamp(1rem, 6.5cqw, 10rem);
 }
 
 .skill-image {
