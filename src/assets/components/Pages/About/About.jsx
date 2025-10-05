@@ -6,7 +6,7 @@ import IntroContent from './IntroContent';
 import './css/About.css'; // Assuming you have a CSS file for styling
 
 function About({ setOverlayActive}){
-    const [pageTitle, setPageTitle] = useState("General");
+    const [pageTitle, setPageTitle] = useState("Intro");
 
     const contentMap = {
         Intro: <IntroContent />,
