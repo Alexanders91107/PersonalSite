@@ -8,7 +8,7 @@ function GeneralContent(){
             <div className = "subcontainer general-subcontainer">
                 <div className = "subcontainer-title">Who are you?</div>
                 <div className = "subcontainer-text">
-                    I'm a 17-year-old <span className = "important-text">computer science student</span> with a background in early college and <span className = "important-text">real-world experience</span> in software development, database management, and front-end development and design. I have a passion for learning as much as I can about not only computer science, but also many other fields that interest me.
+                    I'm a 18-year-old <span className = "important-text">computer science student</span> with a background in early college and <span className = "important-text">real-world experience</span> in software development, database management, and front-end development and design. I have a passion for learning as much as I can about not only computer science, but also many other fields that interest me.
                 </div>
             </div>
             <div className = "subcontainer general-subcontainer">
