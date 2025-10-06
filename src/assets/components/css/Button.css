@@ -6,7 +6,7 @@
   height: 50px; /* Set a fixed height */
   font-size: 0.8em; /* Adjust font size if there's text */
   font-weight: 500;
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-family: 'Comic Sans MS', 'Chalkboard', 'Marker Felt', 'Trebuchet MS', -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: #b0b0b0;
   cursor: pointer;
   transition: border-color 0s;

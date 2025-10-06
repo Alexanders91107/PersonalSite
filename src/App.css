@@ -32,7 +32,7 @@ html, body {
 }
 
 .loading-screen {
-    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    font-family: 'Comic Sans MS', 'Chalkboard', 'Marker Felt', 'Trebuchet MS', -apple-system, BlinkMacSystemFont, sans-serif;
     position: fixed;
     inset: 0;
     background-color: #000000dd; /* Semi-transparent black */
@@ -45,7 +45,7 @@ html, body {
 }
 
 .loading-text {
-    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    font-family: 'Comic Sans MS', 'Chalkboard', 'Marker Felt', 'Trebuchet MS', -apple-system, BlinkMacSystemFont, sans-serif;
     color: white;
     font-size: 5em;
 }
