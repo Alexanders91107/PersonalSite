@@ -13,11 +13,12 @@ html, body {
     overflow: hidden;
     margin: 0;
     padding: 0;
-    font-family: 'Comic Sans MS', 'Chalkboard', 'Marker Felt', 'Trebuchet MS', -apple-system, BlinkMacSystemFont, sans-serif;
+    /*comic sans font windows, comic sans ms sans cursive*/
+    font-family: 'Comic Sans MS', sans-serif;
 }
 
 #root { /* Or your main app container ID/class */
-    font-family: 'Comic Sans MS', 'Chalkboard', 'Marker Felt', 'Trebuchet MS', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Comic Sans MS', sans-serif;
     height: 100%;
     width: 100%;
     overflow: hidden;
@@ -29,11 +30,19 @@ html, body {
     #root{
         font-family: 'Roboto Mono', 'SF Mono', 'Monaco', 'Menlo', monospace;
     }
+
+    html, body {
+        font-family: 'Roboto Mono', 'SF Mono', 'Monaco', 'Menlo', monospace;
+    }
 }
 
 /* Alternative iOS detection using hover capability */
 @media (hover: none) and (pointer: coarse) {
     #root{
+        font-family: 'Roboto Mono', 'SF Mono', 'Monaco', 'Menlo', monospace;
+    }
+    
+    html, body {
         font-family: 'Roboto Mono', 'SF Mono', 'Monaco', 'Menlo', monospace;
     }
 }
@@ -51,7 +60,7 @@ html, body {
 }
 
 .loading-screen {
-    font-family: 'Comic Sans MS', 'Chalkboard', 'Marker Felt', 'Trebuchet MS', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: inherit;
     position: fixed;
     inset: 0;
     background-color: #000000dd; /* Semi-transparent black */
@@ -64,7 +73,7 @@ html, body {
 }
 
 .loading-text {
-    font-family: 'Comic Sans MS', 'Chalkboard', 'Marker Felt', 'Trebuchet MS', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: inherit;
     color: white;
     font-size: 5em;
 }

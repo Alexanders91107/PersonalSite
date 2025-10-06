@@ -27,7 +27,7 @@
     right: 0px;
     text-align: right;
     color: #ffffff;
-    font-family: 'Comic Sans MS', 'Chalkboard', 'Marker Felt', 'Trebuchet MS', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: inherit;
     top: 50%;
     transform: translateY(-50%);
     pointer-events: none; /* makes it "invisible" to mouse events */

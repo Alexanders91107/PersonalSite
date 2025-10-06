@@ -1,5 +1,5 @@
 .background-image {
-    font-family: 'Arial', sans-serif;
+    font-family: inherit;
     color: #333;
     background-color: #3344DD;
     background-image: linear-gradient(90deg, #01b3fb 0%, #0647bf 100%);

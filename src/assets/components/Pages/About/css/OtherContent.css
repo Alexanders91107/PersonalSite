@@ -48,7 +48,7 @@
 }
 
 .warning-button{
-    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    font-family: inherit;
     padding: 10px 20px;
     font-size: 1.2rem;
     background-color: #960000;
@@ -115,7 +115,7 @@
 }
 
 .other-header-text{
-    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    font-family: inherit;
     width: 40%;
     text-align: center;
     font-size: clamp(1.4rem, 5cqw, 3rem);
@@ -209,7 +209,7 @@
 }
 
 .other-subcontainer-title {
-    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    font-family: inherit;
     width: 50%;
     text-align: center;
     font-size: 1.7rem;
@@ -251,7 +251,7 @@
 }
 
 .other-subcontainer-text {
-    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    font-family: inherit;
     color: #ffffffaa;
     width: 100%;
     text-align: center;

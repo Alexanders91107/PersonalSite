@@ -57,7 +57,7 @@
 }
 
 .page-button{
-    font-family: 'Comic Sans MS', 'Chalkboard', 'Marker Felt', 'Trebuchet MS', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: inherit;
     font-size: 0.8rem;
     color: #ffffff;
     background-color: #ffffff10; /* Transparent background */
