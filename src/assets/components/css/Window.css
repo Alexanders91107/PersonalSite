@@ -1,6 +1,6 @@
 .window {
     position: absolute;
-    font-family: 'Comic Sans MS', 'Chalkboard', 'Marker Felt', 'Trebuchet MS', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: inherit;
     top: 500px;
     left: 500px;
     transform: translate(-50%, -50%);
