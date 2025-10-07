@@ -49,3 +49,10 @@
         display: none; /* Hide on small screens */
     }
 }
+
+/* Alternative: Hide on touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .game-button {
+        display: none;
+    }
+}

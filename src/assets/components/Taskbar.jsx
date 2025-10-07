@@ -27,7 +27,7 @@ function Taskbar({clickFunction, hoverFunction, style}) {
             <Button clickFunction={clickFunction} contentType={"about"} logo={aboutSVG} />
             <Button clickFunction={clickFunction} contentType={"projects"} logo={projectsSVG} />
             <Button clickFunction={clickFunction} contentType={"posts"} logo={postsSVG} />
-            <Button clickFunction={clickFunction} contentType={"game"} logo={gameSVG} />
+            <div className = "game-button"><Button clickFunction={clickFunction} contentType={"game"} logo={gameSVG} /></div>
         </div>
 
         <div className = "time-date-container">
