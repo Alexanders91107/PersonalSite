@@ -7,6 +7,10 @@ function Window({ windowTitle = "My Application", toggleTaskbar, onClose, onAcce
     //Variables and states
     //------------------------------------------------------------------------------------
 
+    // Minimum size for the window
+    const minWidth = 350;
+    const minHeight = 100;
+
     // State for dragging
     const [isDragging, setIsDragging] = useState(false);
     const [position, setPosition] = useState({ top: window.innerHeight/4, left: window.innerWidth/4});
@@ -19,7 +23,7 @@ function Window({ windowTitle = "My Application", toggleTaskbar, onClose, onAcce
     const [resizeMousePos, setResizeMousePos] = useState({ x: 0, y: 0 });
     const [resizeInitialSize, setResizeInitialSize] = useState({ width: 0, height: 0 });
     const [resizeInitialPosition, setResizeInitialPosition] = useState({ top: 0, left: 0 });
-    const [size, setSize] = useState({ width: window.innerWidth/2, height: window.innerHeight/2});
+    const [size, setSize] = useState({ width: Math.max(window.innerWidth/2, minWidth), height: Math.max(window.innerHeight/2, minHeight)});
 
     // State for fullscreen mode
     const [isFullscreen, setIsFullscreen] = useState(false);
@@ -28,15 +32,11 @@ function Window({ windowTitle = "My Application", toggleTaskbar, onClose, onAcce
 
     const [isOverlayActive, setIsOverlayActive] = useState(false);
 
-    // Minimum size for the window
-    const minWidth = 350;
-    const minHeight = 100;
-
     // To prevent sticking to the very edge
     const viewportGutter = 5;
     //------------------------------------------------------------------------------------
     //------------------------------------------------------------------------------------
-
+    
     //------------------------------------------------------------------------------------
     //Code for handling app.js functions
     //------------------------------------------------------------------------------------
