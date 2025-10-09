@@ -445,7 +445,6 @@ function Window({ windowTitle = "My Application", toggleTaskbar, onClose, onAcce
             ref={windowRef}
             style={windowStyle} // runs on ever render, updates position of window
         >
-
             {/* 
             Code for the window Header ---
             */}

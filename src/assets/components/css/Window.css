@@ -38,6 +38,9 @@
     width: 100%;
     height: calc(100% - 40px);
     margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow-y: hidden; /* Allows scrolling if content overflows */
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* Internet Explorer and Edge */

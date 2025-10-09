@@ -17,14 +17,18 @@ function About({ setOverlayActive}){
 
     return (
         <div className="main-container">
-            <div className = "header">
-                <button className = "page-button" onClick={() => setPageTitle("Intro")}>Intro</button>
-                <button className = "page-button" onClick={() => setPageTitle("General")}>General</button>
-                <button className = "page-button" onClick={() => setPageTitle("Skills")}>Skills</button>
-                <button className = "page-button" onClick={() => setPageTitle("Other")}>Other</button>
+            <div className = "header-container">
+                <div className = "header">
+                    <button className = "page-button" onClick={() => setPageTitle("Intro")}>Intro</button>
+                    <button className = "page-button" onClick={() => setPageTitle("General")}>General</button>
+                    <button className = "page-button" onClick={() => setPageTitle("Skills")}>Skills</button>
+                    <button className = "page-button" onClick={() => setPageTitle("Other")}>Other</button>
+                </div>
             </div>
-            <div className = "content">
-                {contentMap[pageTitle]}
+            <div className = "content-container">
+                <div className = "content">
+                    {contentMap[pageTitle]}
+                </div>
             </div>
             <div className = "background"></div>
         </div>
