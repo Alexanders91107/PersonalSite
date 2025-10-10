@@ -3,6 +3,16 @@
     max-width: 1000px;
     height: 90%;
     overflow-y: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.general-container{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .subcontainer{
