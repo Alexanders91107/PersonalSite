@@ -1,9 +1,20 @@
 .main-container{
     height: 100%;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     overflow-y: auto;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer and Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.about-container{
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .main-container::-webkit-scrollbar {
@@ -35,6 +46,16 @@
     word-break: break-word; /* Extra support for word breaking */
 }
 
+.content-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px 0px;
+    box-sizing: border-box;
+}
+
 .header{
     position: sticky;
     top: 5px;
@@ -51,6 +72,13 @@
     justify-content: center;
     z-index: 2;
     transition: box-shadow 0.3s ease; /* Add this line */
+}
+
+.header-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header:hover {
