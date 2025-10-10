@@ -8,8 +8,8 @@ function Window({ windowTitle = "My Application", toggleTaskbar, onClose, onAcce
     //------------------------------------------------------------------------------------
 
     // Minimum size for the window
-    const minWidth = 350;
-    const minHeight = 100;
+    const minWidth = 400;
+    const minHeight = 200;
 
     // State for dragging
     const [isDragging, setIsDragging] = useState(false);
